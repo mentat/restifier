@@ -2,11 +2,11 @@ import re
 import random
 import unittest
 
-from validators import *
-from messages import *
+from restifier.validators import *
+from restifier.messages import *
 
-from decorators import *
-from middleware import *
+from restifier.decorators import *
+from restifier.middleware import *
 
 class TestValidators(unittest.TestCase):
 

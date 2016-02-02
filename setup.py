@@ -4,13 +4,15 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
-# Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+try:
+    import pypandoc
+    long_description = pypandoc.convert(path.join(here, 'README.md'), 'rst')
+except(IOError, ImportError):
+    long_description = open(path.join(here, 'README.md'), encoding='utf-8').read()
 
 setup(
     name='restifier',
-    version='1.0.1',
+    version='1.0.3',
 
     description='A data validation and REST auto-documenter for APIs.',
     long_description=long_description,

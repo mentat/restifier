@@ -6,13 +6,13 @@ here = path.abspath(path.dirname(__file__))
 
 try:
     import pypandoc
-    long_description = pypandoc.convert(path.join(here, 'README.md'), 'rst')
+    long_description = pypandoc.convert('README.md', 'rst')
 except(IOError, ImportError):
-    long_description = open(path.join(here, 'README.md'), encoding='utf-8').read()
+    long_description = open('README.md', encoding='utf-8').read()
 
 setup(
     name='restifier',
-    version='1.0.3',
+    version='1.0.4',
 
     description='A data validation and REST auto-documenter for APIs.',
     long_description=long_description,
@@ -23,6 +23,10 @@ setup(
     author_email='jesse.lovelace@gmail.com',
 
     license='MIT',
+    include_package_data=True,
+    package_data={
+        '': ['README.md'],
+    },
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',

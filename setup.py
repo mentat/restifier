@@ -24,9 +24,6 @@ setup(
 
     license='MIT',
     include_package_data=True,
-    package_data={
-        '': ['README.md'],
-    },
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
